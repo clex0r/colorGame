@@ -9,6 +9,7 @@ var resetButton = document.getElementById("reset");
 var easyButton = document.getElementById("easy");
 var hardButton = document.getElementById("hard");
 
+//changing to hard-mode
 hardButton.addEventListener("click", function(){
   easyButton.classList.remove("selected");
   this.classList.add("selected");
@@ -22,6 +23,7 @@ hardButton.addEventListener("click", function(){
       squares[i].style.display = "block";
   }
 })
+//Changing to easy-mode
 easyButton.addEventListener("click", function(){
   hardButton.classList.remove("selected");
   this.classList.add("selected");
@@ -38,6 +40,7 @@ easyButton.addEventListener("click", function(){
     }
   }
 })
+//resetting, after guessed right
 resetButton.addEventListener("click", function(){
   colors = generateColor(numSquares);
   pickedColor = pickColor();
@@ -85,6 +88,7 @@ function generateColor(num){
   }
   return arr;
 }
+//generate random RGB numbers
 function randomColor(){
   //RGB -> R
   var r = Math.floor(Math.random() * 256);
